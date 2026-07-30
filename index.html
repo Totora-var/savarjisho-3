@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1a2e24" />
+    <title>კონტაქტები</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <main class="app">
+      <header class="brand">
+        <p class="brand-mark">კონტაქტები</p>
+        <h1>დაამატე ნომერი ტელეფონშიც</h1>
+        <p class="lede">შეინახე კონტაქტი აქ და ერთი შეხებით გადაიტანე ტელეფონის წიგნში.</p>
+      </header>
+
+      <form class="composer" id="contact-form" autocomplete="on">
+        <label>
+          <span>სახელი</span>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            maxlength="80"
+            placeholder="მაგ. ნინო კობახიძე"
+            autocomplete="name"
+          />
+        </label>
+        <label>
+          <span>ტელეფონი</span>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            required
+            inputmode="tel"
+            maxlength="32"
+            placeholder="მაგ. +995 555 12 34 56"
+            autocomplete="tel"
+          />
+        </label>
+        <button type="submit" class="btn primary">დამატება</button>
+      </form>
+
+      <section class="list-section" aria-labelledby="list-title">
+        <div class="list-head">
+          <h2 id="list-title">შენი კონტაქტები</h2>
+          <span class="count" id="count">0</span>
+        </div>
+        <ul class="contacts" id="contacts"></ul>
+        <p class="empty" id="empty">ჯერ არ გაქვს კონტაქტი. ზემოთ დაამატე სახელი და ტელეფონი.</p>
+      </section>
+    </main>
+
+    <template id="contact-item">
+      <li class="contact">
+        <div class="contact-main">
+          <p class="contact-name"></p>
+          <p class="contact-phone"></p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn ghost call" href="#">დარეკვა</a>
+          <button type="button" class="btn accent save">ტელეფონში</button>
+          <button type="button" class="btn danger delete" aria-label="წაშლა">×</button>
+        </div>
+      </li>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
