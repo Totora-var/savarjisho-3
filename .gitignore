@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+tmp-crops/
+*.tmp
+.DS_Store
